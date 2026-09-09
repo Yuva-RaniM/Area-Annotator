@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: area-annotator
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm run server
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false

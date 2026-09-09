@@ -1,5 +1,4 @@
 # Area Annotator — Intelligent PDF Floor Plan Measurement System
-
 Area Annotator is a web-based architectural PDF measurement and takeoff application that allows users to upload floor plans, detect enclosed spaces, calculate areas, edit boundaries, calibrate drawing scale, and save measurements for later use.
 
 ## Key Features
@@ -67,3 +66,39 @@ Edit if Required
 Save Drawing
     ↓
 Reopen & Restore
+
+## Local Development
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+Copy `.env.example` to `.env` and add the required API and Firebase values.
+
+### Start the application
+
+```bash
+npm run dev
+```
+
+The frontend runs on `http://localhost:5173` and the API server runs on `http://localhost:3001`.
+
+### Build and test
+
+```bash
+npm run build
+npm test
+```
+
+## Live Deployment
+
+The repository includes a `render.yaml` configuration for deploying the frontend and Express API as one Render web service.
+
+1. Create a new Render Blueprint from this GitHub repository.
+2. Set `GEMINI_API_KEY` in the Render dashboard.
+3. Add the Firebase environment variables if cloud storage and Firestore sync are enabled.
+4. Deploy the service and open the generated Render URL.
+
+Render uses `npm ci && npm run build` to build the application and `npm run server` to serve the API and production frontend.
