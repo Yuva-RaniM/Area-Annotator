@@ -41,6 +41,7 @@ Area Annotator is a web-based architectural PDF measurement and takeoff applicat
 ### AI
 - Google Gemini API
 
+```
 ### Testing
 - Vitest
 
@@ -67,16 +68,6 @@ Save Drawing
     ↓
 Reopen & Restore
 
-## Local Development
-
-### Install dependencies
-
-```bash
-npm install
-```
-
-Copy `.env.example` to `.env` and add the required API and Firebase values.
-
 ### Start the application
 
 ```bash
@@ -92,13 +83,3 @@ npm run build
 npm test
 ```
 
-## Live Deployment
-
-The repository includes a `render.yaml` configuration for deploying the frontend and Express API as one Render web service.
-
-1. Create a new Render Blueprint from this GitHub repository.
-2. Set `GEMINI_API_KEY` in the Render dashboard.
-3. Add the Firebase environment variables if cloud storage and Firestore sync are enabled.
-4. Deploy the service and open the generated Render URL.
-
-Render uses `npm ci && npm run build` to build the application and `npm run server` to serve the API and production frontend.
